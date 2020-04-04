@@ -58,7 +58,7 @@
     </div>
     <script type="text/javascript">
         console.log("Fetching images");
-        const BASE_URL = (window.location.origin.startsWith("localhost"))
+        const BASE_URL = !(window.location.origin.startsWith("localhost"))
             ? "https://thunderducky.github.io/pixelCaravanCDN"
             : "";
         const JSON_URL = `${BASE_URL}/assets/spriteAtlas.json`
