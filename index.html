@@ -58,9 +58,8 @@
     </div>
     <script type="text/javascript">
         console.log("Fetching images");
-        const BASE_URL = !(window.location.origin.startsWith("localhost"))
-            ? "https://thunderducky.github.io/pixelCaravanCDN"
-            : "";
+        const BASE_URL = "https://thunderducky.github.io/pixelCaravanCDN"
+
         const JSON_URL = `${BASE_URL}/assets/spriteAtlas.json`
         const ulElement = document.querySelector("#imageList")
         fetch(JSON_URL).then(res => res.json()).then(jsonData => {
