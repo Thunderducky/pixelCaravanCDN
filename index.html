@@ -10,6 +10,18 @@
         h1, p {
             font-family: "pixel-caravan", serif;
         }
+        .image-sprite {
+            padding: 15px;
+            font-size: 24px;
+        }
+        #imageList {
+            display:flex;
+            background: #EEE;
+            padding: 15px;
+            border-radius: 15px;
+            justify-content:center;
+            flex-wrap:wrap;
+        }
     </style>
 </head>
 <body>
@@ -32,6 +44,44 @@
         </p>
         <p>The quick brown fox jumped over the lazy dog!</p>
        <p> Note: <span style="font-family:serif; display:inline-block; position:relative; top: -5px">$</span> is represented as $</p>
+       <div>
+           <h2>Images</h2>
+           <h3>Spritesheet</h3>
+           <div class="imageContainer">
+                <img src="./assets/spritesheet.png" />
+           </div>
+           <h3>Components</h3>
+           <div id="imageList">
+
+           </div>
+       </div>
     </div>
+    <script type="text/javascript">
+        console.log("Fetching images");
+        const BASE_URL = (window.location.origin.startsWith("localhost"))
+            ? "https://thunderducky.github.io/pixelCaravanCDN"
+            : "";
+        const JSON_URL = `${BASE_URL}/assets/spriteAtlas.json`
+        const ulElement = document.querySelector("#imageList")
+        fetch(JSON_URL).then(res => res.json()).then(jsonData => {
+            console.log(jsonData);
+            for(var name in jsonData){
+                console.log(name);
+                const imageData = jsonData[name];
+                const image = document.createElement("img");
+                image.setAttribute("alt", name);
+                image.setAttribute("src", imageData.singleURL);
+                image.setAttribute("width", imageData.width * 4);
+                const li = document.createElement("div");
+                li.style.display = "flex";
+                li.style.justifyContent = "center";
+                li.innerHTML = name + "&nbsp&nbsp";
+                li.classList.add("image-sprite")
+                li.appendChild(image);
+                ulElement.appendChild(li);
+
+            }
+        })
+    </script>
 </body>
 </html>
