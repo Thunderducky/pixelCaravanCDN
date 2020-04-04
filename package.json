@@ -1,0 +1,24 @@
+{
+  "name": "pixel-caravan-cdn",
+  "version": "1.0.0",
+  "description": "the CDN for pixelCaravan",
+  "main": "index.js",
+  "scripts": {
+    "stitch": "node scripts/stitcher.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thunderducky/pixelCaravanCDN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thunderducky/pixelCaravanCDN/issues"
+  },
+  "homepage": "https://github.com/Thunderducky/pixelCaravanCDN#readme",
+  "devDependencies": {
+    "chalk": "^4.0.0",
+    "pngjs": "^3.4.0"
+  }
+}

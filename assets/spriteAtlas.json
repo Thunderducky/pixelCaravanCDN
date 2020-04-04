@@ -1,0 +1,16 @@
+{
+  "fire": {
+    "width": 8,
+    "height": 8,
+    "singleURL": "https://thunderducky.github.io/pixelCaravanCDN/assets/sprites/fire-8x8.png",
+    "x": 0,
+    "y": 0
+  },
+  "water": {
+    "width": 8,
+    "height": 8,
+    "singleURL": "https://thunderducky.github.io/pixelCaravanCDN/assets/sprites/water-8x8.png",
+    "x": 8,
+    "y": 0
+  }
+}
